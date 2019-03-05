@@ -7,3 +7,5 @@ add_executable(${NAME} main.cpp)
 target_include_directories(${NAME} PRIVATE "${PROJECT_SOURCE_DIR}/include")
 
 target_link_libraries(${NAME} PRIVATE serialcpp)
+
+install(TARGETS ${NAME} DESTINATION "${CMAKE_INSTALL_BINDIR}")
