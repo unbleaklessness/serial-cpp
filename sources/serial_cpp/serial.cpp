@@ -8,7 +8,6 @@
 #include <iostream>
 #include <serial.h>
 
-
 serial::serial(const std::string &port_name, const speed_t &speed) {
     this->tty_path = port_name;
     this->speed = speed;

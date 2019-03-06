@@ -3,7 +3,7 @@
 #include <chrono>
 #include <thread>
 
-#include "serialcpp/serial.h"
+#include "serial_cpp/serial.h"
 
 int main(int argc, char **argv) {
     if (argc > 1) {
@@ -12,14 +12,10 @@ int main(int argc, char **argv) {
         const size_t buffer_size = 64;
         char *buffer = new char[buffer_size]();
 
-        std::cout << "Write strings with size no more than " << buffer_size << " characters." << std::endl;
-
         while (1) {
-            std::cin >> buffer;
+            port->read(buffer, buffer_size);
 
-            ssize_t n = port->write(buffer, buffer_size);
-
-            std::cout << "Bytes written: " << n << std::endl;
+            std::cout << std::string(buffer, buffer_size);
             std::fill_n(buffer, buffer_size, 0);
 
             std::this_thread::sleep_for(std::chrono::milliseconds(50));

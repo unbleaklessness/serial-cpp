@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(NAME serialcpp)
+set(NAME serial_cpp)
 
 add_library(${NAME} STATIC SHARED serial.cpp)
 

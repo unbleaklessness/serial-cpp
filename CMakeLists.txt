@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(MY_PROJECT_NAME default)
+set(MY_PROJECT_NAME serial_cpp)
 project(${MY_PROJECT_NAME})
 
 include(GNUInstallDirs)
